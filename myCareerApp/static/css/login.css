@@ -1,0 +1,52 @@
+
+.title {
+    font-size: 60px;
+}
+
+.login-box {
+    margin: auto;
+    border: 2px solid black;
+    padding: 10px;
+    width: 500px;
+    height: 600px;
+}
+
+.login-box .login-title {
+    font-size: 40px;
+}
+
+.login-input-id , .login-input-password {
+    /* font-weight: lighter; */
+    font-size: 30px;
+    padding: 50px 30px 50px 0;
+    margin: auto;
+
+}
+
+.login-input-id label , .login-input-password label {
+    display: inline-block;
+    width: 200px;
+}
+
+.login-input-id input , .login-input-password input {
+    background-color: #FFFEFA;
+    border: 0;
+    border-bottom: 1px solid black;
+    width: 230px;
+    height: 20px;
+}
+
+.login-input-id input:focus , .login-input-password input:focus {
+    outline: none;
+}
+
+.login-box .login-btn {
+    margin: 50px 0 50px 0;
+}
+
+.login-box .login-signup {
+    font-size: 25px;
+    text-decoration-line: underline;
+    color: #574747;
+    cursor: pointer;
+}

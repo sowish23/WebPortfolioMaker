@@ -1,0 +1,48 @@
+
+.title {
+    font-size: 60px;
+}
+
+.signup-box {
+    margin: auto;
+    border: 2px solid black;
+    padding: 10px;
+    width: 500px;
+    height: 600px;
+}
+
+.signup-box .signup-title {
+    font-size: 40px;
+}
+
+.signup-input-name , .signup-input-passwordC , .signup-input-id , .signup-input-password {
+    /* font-weight: lighter; */
+    font-size: 30px;
+    padding: 25px 30px 25px 0;
+    margin: auto;
+
+}
+
+.signup-input-id label , .signup-input-password label, 
+.signup-input-name label, .signup-input-passwordC label {
+    display: inline-block;
+    width: 200px;
+}
+
+.signup-input-id input , .signup-input-password input, 
+.signup-input-name input , .signup-input-passwordC input  {
+    background-color: #FFFEFA;
+    border: 0;
+    border-bottom: 1px solid black;
+    width: 230px;
+    height: 20px;
+}
+
+.signup-input-id input:focus , .signup-input-password input:focus, 
+.signup-input-name input:focus, .signup-input-passwordC input:focus {
+    outline: none;
+}
+
+.signup-box .signup-btn {
+    margin: 20px 0 20px 0;
+}
