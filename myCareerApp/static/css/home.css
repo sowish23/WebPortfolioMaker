@@ -68,3 +68,46 @@ header {
     display: inline-block;
     width: 500px;
 }
+
+
+.projects-box {
+    border: 2px solid black;
+    width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+    padding : 10px 50px 50px 50px
+}
+
+.projects-box .projects-box-title {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.project div {
+    margin-top: 30px;
+}
+
+.project .project-title {
+    background-color:  #C8B79E;
+    color: #fff;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.project .project-img img{
+    width: 800px;
+}
+
+.project .project-url {
+    background-color: #C8B79E;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+    width: 800px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.project .project-description {
+    font-size: 24px;
+}
