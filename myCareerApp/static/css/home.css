@@ -1,0 +1,70 @@
+body {
+    padding-top: 80px;
+}
+
+header {
+    background-color: #FFFEFA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: auto;
+    padding: 10px 20px 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+}
+
+.nav-title {
+    font-size: 24px;
+    float: left;
+}
+
+.nav-menu {
+    font-size: 20px;
+    float: right;
+    margin-top: 20px;
+}
+
+.nav-menu span {
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.aboutme-box {
+    border: 2px solid black;
+    width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+    padding : 10px 50px 50px 50px
+}
+
+.aboutme-box .aboutme-title {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.aboutme-box .aboutme-img {
+    /* width: 650px;
+    height: 650px; */
+    margin: auto;
+}
+
+.aboutme-box .aboutme-intro {
+    font-size: 24px;
+    margin: 50px 0 50px 0;
+}
+
+.aboutme-box .aboutme-profile .profile {
+    margin : 20px;
+    font-size: 30px;
+}
+
+.profile label {
+    display: inline-block;
+    width: 200px;
+}
+
+.profile span {
+    display: inline-block;
+    width: 500px;
+}
