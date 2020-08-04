@@ -19,7 +19,7 @@ import myCareerApp.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', myCareerApp.views.index, name='index'),
-    path('login/', myCareerApp.views.login, name='login'),
+    # path('', myCareerApp.views.index, name='index'),
+    path('', myCareerApp.views.login, name='login'),
     path('signup/', myCareerApp.views.signup, name='signup'),
 ]
