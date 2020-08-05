@@ -43,9 +43,8 @@ header {
     font-weight: bolder;
 }
 
-.aboutme-box .aboutme-img {
-    /* width: 650px;
-    height: 650px; */
+.aboutme-box .aboutme-img img{
+    width: 800px;
     margin: auto;
 }
 
@@ -94,7 +93,7 @@ header {
     font-size: 30px;
 }
 
-.project .project-img img{
+.project-img img{
     width: 800px;
 }
 

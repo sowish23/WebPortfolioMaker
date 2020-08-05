@@ -4,10 +4,13 @@ def index(request):
     return render(request, 'index.html')
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'Login.html')
 
 def signup(request):
-    return render(request, 'signup.html')
+    return render(request, 'Signup.html')
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'Home.html')
+
+def edit(request):
+    return render(request, 'Edit.html')
