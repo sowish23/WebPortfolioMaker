@@ -1,38 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/static/css/main.css">
-  <link rel="stylesheet" href="/static/css/home.css">
-  <link rel="stylesheet" href="/static/css/edit.css">
-  <title>Wish</title>
-</head>
-
-<body>
-  {% extends "base.html" %}
-  
-  {% block content %}
-  <div>
-    <div class="aboutme-box">
-      <div class="aboutme-title">
-        <p>ABOUT ME</p>
-      </div>
-      <div class="aboutme-img">
-        <img src="/static/img/profile_img.jpeg" />
-      </div>
-      <div>
-        <button>UPLOAD IMAGE</button>
-      </div>
-      <form method="POST">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit">EDIT</button>
-      </form>
+{% extends "base.html" %}
+{% block content %}
+<div>
+  <div class="aboutme-box">
+    <div class="aboutme-title">
+      <p>ABOUT ME</p>
     </div>
+    <div class="aboutme-img">
+      <img src="/static/img/profile_img.jpeg" />
+    </div>
+    <div>
+      <button>UPLOAD IMAGE</button>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">EDIT</button>
+    </form>
   </div>
-  {% endblock content %}
-</body>
-
-</html>
+</div>
+{% endblock content %}
