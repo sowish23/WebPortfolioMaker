@@ -25,83 +25,14 @@
       <div>
         <button>UPLOAD IMAGE</button>
       </div>
-      <div class="aboutme-intro">
-        <input value='" 안녕하세요. 주니어 웹 개발자 정소원 입니다. "'/>
-      </div>
-      <div class="aboutme-profile">
-        <div class="profile">
-          <label>NAME</label>
-          <input value='정소원'/>
-        </div>
-        <div class="profile">
-          <label>TEL</label>
-          <input value='010-8520-1180'/>
-        </div>
-        <div class="profile">
-          <label>EMAIL</label>
-          <input value='soso2266@kookmin.ac.kr'/>
-        </div>
-        <div class="profile">
-          <label>BIRTH</label>
-          <input value='1999.11.23'/>
-        </div>
-        <div class="profile">
-          <label>TECH</label>
-          <input value='FrontEnd - React.js'/>
-        </div>
-        <div class="profile">
-          <label>CAREER</label>
-          <input value='Filled Bottle (2019.09 ~)'/>
-        </div>
-        <div class="profile">
-          <label>KAKAO ID</label>
-          <input value='sowon23'/>
-        </div>
-        <div class="profile">
-          <label>GITHUB</label>
-          <input value='https://github.com/sowish23'/>
-        </div>
-      </div>
-      <div>
-        <button>EDIT</button>
-      </div>
-    </div>
-    <div class="projects-box" id="projects-box">
-      <div class="projects-box-title">
-        <p>PROJECTS</p>
-      </div>
-      <div class="project">
-        <button onclick="add_div()">ADD PROJECT</button>
-      </div>
-      <div class="projects-list" id="projects-list">
-        <div class="project">
-          <label>PROJECT TITLE</label>
-          <input value='WINKPROJECT - 건Dㅏ'/>
-        </div>
-        <div class="project-img">
-          <img src="/static/img/project_img.png" />
-        </div>
-        <div class="project">
-          <button>UPLOAD IMAGE</button>
-        </div>
-        <div class="project">
-          <label>PROJECT URL</label>
-          <input value='https://github.com/sowish23/wink_gunda'/>
-        </div>
-        <div class="project project-description">
-          <label>PROJECT DESCRIPTION</label>
-          <textarea>윙크 프로젝트로 진행한 식단 관리 웹사이트</textarea>
-        </div>
-        <div class="project">
-          <button>EDIT</button>
-        </div>
-      </div>
+      <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">EDIT</button>
+      </form>
     </div>
   </div>
   {% endblock content %}
-
-
-  <script type="text/javascript" src="/static/js/edit.js"></script> 
 </body>
 
 </html>

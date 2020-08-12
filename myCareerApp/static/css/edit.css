@@ -30,8 +30,14 @@ textarea:focus {
     border : 1px solid #C8B79E;
 }
 
-.profile input {
+input, textarea {
     width: 460px;
+}
+
+textarea {
+    height: 50px;
+    text-align: left;
+    vertical-align: middle;
 }
 
 .project {
@@ -39,7 +45,12 @@ textarea:focus {
     font-size: 30px;
 }
 
-.project label {
+p {
+    margin : 20px;
+    font-size: 30px;
+}
+
+label {
     display: inline-block;
     width: 200px;
 }

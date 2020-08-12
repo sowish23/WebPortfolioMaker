@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render ,redirect
+from .models import *
+from .forms import ProfileForm
 
 def index(request):
     return render(request, 'index.html')
@@ -12,5 +14,18 @@ def signup(request):
 def home(request):
     return render(request, 'Home.html')
 
+# def edit(request):
+#     return render(request, 'Edit.html')
+
 def edit(request):
-    return render(request, 'Edit.html')
+    if request.method=='POST':
+        form = ProfileForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/home')
+    else:
+        form = ProfileForm()
+    return render(request, 'Edit.html', {'form': form})
+
+def project(request):
+    return render(request, 'Project.html')
