@@ -1,6 +1,6 @@
 from django.shortcuts import render ,redirect
 from .models import *
-from .forms import ProfileForm
+from .forms import ProfileForm, ProjectForm
 
 def index(request):
     return render(request, 'index.html')
@@ -28,4 +28,11 @@ def edit(request):
     return render(request, 'Edit.html', {'form': form})
 
 def project(request):
-    return render(request, 'Project.html')
+    if request.method=='POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/home')
+    else:
+        form = ProjectForm()
+    return render(request, 'Project.html', {'form': form})

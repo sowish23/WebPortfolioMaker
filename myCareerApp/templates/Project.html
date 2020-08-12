@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="/static/css/home.css">
   <link rel="stylesheet" href="/static/css/edit.css">
   <title>Wish</title>
+  <style>
+      label {
+          width : 300px;
+      }
+  </style>
 </head>
 
 <body>
@@ -22,34 +27,19 @@
         <button onclick="add_div()">ADD PROJECT</button>
       </div>
       <div class="projects-list" id="projects-list">
-        <div class="project">
-          <label>PROJECT TITLE</label>
-          <input value='WINKPROJECT - 건Dㅏ'/>
-        </div>
-        <div class="project-img">
-          <img src="/static/img/project_img.png" />
-        </div>
-        <div class="project">
-          <button>UPLOAD IMAGE</button>
-        </div>
-        <div class="project">
-          <label>PROJECT URL</label>
-          <input value='https://github.com/sowish23/wink_gunda'/>
-        </div>
-        <div class="project project-description">
-          <label>PROJECT DESCRIPTION</label>
-          <textarea>윙크 프로젝트로 진행한 식단 관리 웹사이트</textarea>
-        </div>
-        <div class="project">
-          <button>EDIT</button>
-        </div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>UPLOAD IMAGE</button>
+            <button type="submit">EDIT</button>
+        </form>
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="/static/js/edit.js"></script> 
   {% endblock content %}
 
 
-  <script type="text/javascript" src="/static/js/edit.js"></script> 
 </body>
 
 </html>
