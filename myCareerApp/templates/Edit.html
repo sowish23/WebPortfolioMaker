@@ -11,16 +11,9 @@
 </head>
 
 <body>
-  <header>
-    <div class="nav-title">
-      <span>Wish <br /> My Portfolio</span>
-    </div>
-    <div class="nav-menu">
-      <span>ABOUT ME</span>
-      <span>PROJECTS</span>
-      <span>EDIT</span>
-    </div>
-  </header>
+  {% extends "base.html" %}
+  
+  {% block content %}
   <div>
     <div class="aboutme-box">
       <div class="aboutme-title">
@@ -105,6 +98,7 @@
       </div>
     </div>
   </div>
+  {% endblock content %}
 
 
   <script type="text/javascript" src="/static/js/edit.js"></script> 

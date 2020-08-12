@@ -10,16 +10,9 @@
 </head>
 
 <body>
-  <header>
-    <div class="nav-title">
-      <span>Wish <br /> My Portfolio</span>
-    </div>
-    <div class="nav-menu">
-      <span>ABOUT ME</span>
-      <span>PROJECTS</span>
-      <span onclick="location.href='/edit'">EDIT</span>
-    </div>
-  </header>
+  {% extends "base.html" %}
+  
+  {% block content %}
   <div>
     <div class="aboutme-box">
       <div class="aboutme-title">
@@ -89,6 +82,7 @@
 
     </div>
   </div>
+  {% endblock content %}
 </body>
 
 </html>
