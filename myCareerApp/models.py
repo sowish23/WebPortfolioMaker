@@ -45,28 +45,24 @@ class User(AbstractBaseUser,PermissionsMixin):
     USERNAME_FIELD = 'nickname'    
     REQUIRED_FIELDS = ['email']
 
-class ProjectBoard(models.Model):
-    project_title = models.CharField(null=False, default = '', max_length=200, verbose_name="프로젝트 이름")
-    project_des = models.TextField(null=False, default = '', verbose_name="프로젝트 설명")
-    project_url = models.TextField(null=False, default = '', verbose_name="프로젝트 링크")
-    project_img = models.TextField(null=True, verbose_name="프로젝트 사진")
-    project_id = models.IntegerField(null=False, default = '', verbose_name="프로젝트 번호")
-
 class Profile(models.Model):
-    user_id = models.CharField(null=False, max_length=10, verbose_name="아이디")
+    user_id = models.CharField(null=False, max_length=10, unique=True, verbose_name="아이디")
     user_password = models.CharField(null=False, max_length=15, verbose_name="비밀번호")
     name = models.CharField(null=False, max_length=10, verbose_name="이름")
     image = models.TextField(null=True, verbose_name="프로필 사진")
     tel = models.CharField(null=False, max_length=12, verbose_name="전화번호")
-    email = models.EmailField(
-        verbose_name='이메일',
-        max_length=255,
-        unique=True,
-        null=False, 
-    )
-    birth = models.TextField(null=True, verbose_name="생년월일")
+    email = models.EmailField(verbose_name='이메일', max_length=255, unique=True, null=False, )
+    birth = models.DateField(auto_now_add=False, null=True, verbose_name="생년월일")
     tech = models.TextField(null=True, verbose_name="기술")
     intro = models.TextField(null=True, blank=True, default= "안녕하세요", verbose_name="자기소개")
     career = models.TextField(null=True, verbose_name="경력")
     kakaoId = models.TextField(null=True, verbose_name="카카오톡아이디")
     github_url = models.TextField(null=True, verbose_name="깃허브")
+
+class ProjectBoard(models.Model):
+    users = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    project_title = models.CharField(null=False, default = '', max_length=200, verbose_name="프로젝트 이름")
+    project_des = models.TextField(null=False, default = '', verbose_name="프로젝트 설명")
+    project_url = models.TextField(null=False, default = '', verbose_name="프로젝트 링크")
+    project_img = models.TextField(null=True, verbose_name="프로젝트 사진")
+    project_id = models.IntegerField(null=False, default = '', verbose_name="프로젝트 번호")
