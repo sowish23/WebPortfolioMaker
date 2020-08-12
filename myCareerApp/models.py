@@ -46,12 +46,12 @@ class User(AbstractBaseUser,PermissionsMixin):
     REQUIRED_FIELDS = ['email']
 
 class Profile(models.Model):
-    user_id = models.CharField(null=False, max_length=10, unique=True, verbose_name="ID")
-    user_password = models.CharField(null=False, max_length=15, verbose_name="PASSWORD")
+    # user_id = models.CharField(null=False, max_length=10, unique=True, verbose_name="ID")
+    # user_password = models.CharField(null=False, max_length=15, verbose_name="PASSWORD")
     name = models.CharField(null=False, max_length=10, verbose_name="NAME")
-    image = models.TextField(null=True, verbose_name="PROFILE IMAGE")
+    image = models.ImageField(upload_to = "myCareerApp/static/img/profile", null=False, default = '', verbose_name="IMAGE")
     tel = models.CharField(null=False, max_length=12, verbose_name="TEL")
-    email = models.EmailField(verbose_name="EMAIL", max_length=255, unique=True, null=False, )
+    email = models.EmailField(verbose_name="EMAIL", max_length=255, null=False )
     birth = models.DateField(auto_now_add=False, null=True, verbose_name="BIRTH")
     tech = models.TextField(null=True, verbose_name="TECH")
     intro = models.TextField(null=True, blank=True, default= "안녕하세요", verbose_name="INTRO")

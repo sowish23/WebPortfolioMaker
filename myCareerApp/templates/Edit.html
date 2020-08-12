@@ -5,13 +5,7 @@
     <div class="aboutme-title">
       <p>ABOUT ME</p>
     </div>
-    <div class="aboutme-img">
-      <img src="/static/img/profile_img.jpeg" />
-    </div>
-    <div>
-      <button>UPLOAD IMAGE</button>
-    </div>
-    <form method="POST">
+    <form method="POST" action='' enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">EDIT</button>

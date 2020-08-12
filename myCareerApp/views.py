@@ -19,7 +19,7 @@ def home(request):
 
 def edit(request):
     if request.method=='POST':
-        form = ProfileForm(request.POST)
+        form = ProfileForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             form.save()
         return redirect('/home')
