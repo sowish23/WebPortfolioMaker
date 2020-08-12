@@ -61,8 +61,8 @@ class Profile(models.Model):
 
 class ProjectBoard(models.Model):
     users = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    project_title = models.CharField(null=False, default = '', max_length=200, verbose_name="프로젝트 이름")
-    project_des = models.TextField(null=False, default = '', verbose_name="프로젝트 설명")
-    project_url = models.TextField(null=False, default = '', verbose_name="프로젝트 링크")
-    project_img = models.TextField(null=True, verbose_name="프로젝트 사진")
-    project_id = models.IntegerField(null=False, default = '', verbose_name="프로젝트 번호")
+    project_title = models.CharField(null=False, default = '', max_length=200, verbose_name="PROJECT TITLE")
+    project_des = models.TextField(null=False, default = '', verbose_name="PROJECT DESCRIPTION")
+    project_url = models.TextField(null=False, default = '', verbose_name="PROJECT URL")
+    project_img = models.TextField(null=True, verbose_name="PROJECT IMAGE")
+    project_id = models.IntegerField(null=False, default = '', verbose_name="PROJECT ID")
