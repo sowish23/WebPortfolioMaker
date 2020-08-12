@@ -46,18 +46,18 @@ class User(AbstractBaseUser,PermissionsMixin):
     REQUIRED_FIELDS = ['email']
 
 class Profile(models.Model):
-    user_id = models.CharField(null=False, max_length=10, unique=True, verbose_name="아이디")
-    user_password = models.CharField(null=False, max_length=15, verbose_name="비밀번호")
-    name = models.CharField(null=False, max_length=10, verbose_name="이름")
-    image = models.TextField(null=True, verbose_name="프로필 사진")
-    tel = models.CharField(null=False, max_length=12, verbose_name="전화번호")
-    email = models.EmailField(verbose_name='이메일', max_length=255, unique=True, null=False, )
-    birth = models.DateField(auto_now_add=False, null=True, verbose_name="생년월일")
-    tech = models.TextField(null=True, verbose_name="기술")
-    intro = models.TextField(null=True, blank=True, default= "안녕하세요", verbose_name="자기소개")
-    career = models.TextField(null=True, verbose_name="경력")
-    kakaoId = models.TextField(null=True, verbose_name="카카오톡아이디")
-    github_url = models.TextField(null=True, verbose_name="깃허브")
+    user_id = models.CharField(null=False, max_length=10, unique=True, verbose_name="ID")
+    user_password = models.CharField(null=False, max_length=15, verbose_name="PASSWORD")
+    name = models.CharField(null=False, max_length=10, verbose_name="NAME")
+    image = models.TextField(null=True, verbose_name="PROFILE IMAGE")
+    tel = models.CharField(null=False, max_length=12, verbose_name="TEL")
+    email = models.EmailField(verbose_name="EMAIL", max_length=255, unique=True, null=False, )
+    birth = models.DateField(auto_now_add=False, null=True, verbose_name="BIRTH")
+    tech = models.TextField(null=True, verbose_name="TECH")
+    intro = models.TextField(null=True, blank=True, default= "안녕하세요", verbose_name="INTRO")
+    career = models.TextField(null=True, verbose_name="CAREER")
+    kakaoId = models.CharField(null=True, max_length=100, verbose_name="KAKAOID")
+    github_url = models.CharField(null=True, max_length=100, verbose_name="GITHUB")
 
 class ProjectBoard(models.Model):
     users = models.ForeignKey(Profile, on_delete=models.CASCADE)
