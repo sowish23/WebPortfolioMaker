@@ -29,7 +29,7 @@ def edit(request):
 
 def project(request):
     if request.method=='POST':
-        form = ProjectForm(request.POST)
+        form = ProjectForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             form.save()
         return redirect('/home')

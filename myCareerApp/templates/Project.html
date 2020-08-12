@@ -9,10 +9,9 @@
         <button onclick="add_div()">ADD PROJECT</button>
     </div>
     <div class="projects-list" id="projects-list">
-        <form method="POST">
+        <form method="POST" action='' enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button>UPLOAD IMAGE</button>
             <button type="submit">EDIT</button>
         </form>
     </div>
