@@ -24,4 +24,5 @@ urlpatterns = [
     path('signup/', myCareerApp.views.signup, name='signup'),
     path('home/', myCareerApp.views.home, name='home'),
     path('edit/', myCareerApp.views.edit, name='edit'),
+    path('create/project/', myCareerApp.views.project, name='project'),
 ]
