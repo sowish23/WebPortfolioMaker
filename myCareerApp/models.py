@@ -63,5 +63,5 @@ class ProjectBoard(models.Model):
     project_title = models.CharField(null=False, default = '', max_length=200, verbose_name="PROJECT TITLE")
     project_des = models.TextField(null=False, default = '', verbose_name="PROJECT DESCRIPTION")
     project_url = models.TextField(null=False, default = '', verbose_name="PROJECT URL")
-    project_img = models.ImageField(upload_to = "images/", null=True, verbose_name="PROJECT IMAGE")
+    project_img = models.ImageField(upload_to = "myCareerApp/static/img/project", null=False, default = '', verbose_name="PROJECT IMAGE")
     project_id = models.IntegerField(null=True, default = 0, verbose_name="PROJECT ID")
