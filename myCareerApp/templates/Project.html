@@ -5,9 +5,9 @@
     <div class="projects-box-title">
         <p>PROJECTS</p>
     </div>
-    <div class="project">
+    {% comment %} <div class="project">
         <button onclick="add_div()">ADD PROJECT</button>
-    </div>
+    </div> {% endcomment %}
     <div class="projects-list" id="projects-list">
         <form method="POST" action='' enctype="multipart/form-data">
             {% csrf_token %}

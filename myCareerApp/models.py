@@ -46,10 +46,11 @@ class User(AbstractBaseUser,PermissionsMixin):
     REQUIRED_FIELDS = ['email']
 
 class Profile(models.Model):
+    objects = models.Manager()
     # user_id = models.CharField(null=False, max_length=10, unique=True, verbose_name="ID")
     # user_password = models.CharField(null=False, max_length=15, verbose_name="PASSWORD")
     name = models.CharField(null=False, max_length=10, verbose_name="NAME")
-    image = models.ImageField(upload_to = "myCareerApp/static/img/profile", null=False, default = '', verbose_name="IMAGE")
+    image = models.ImageField(upload_to = "static/img/profile", null=False, default = '', verbose_name="IMAGE")
     tel = models.CharField(null=False, max_length=12, verbose_name="TEL")
     email = models.EmailField(verbose_name="EMAIL", max_length=255, null=False )
     birth = models.DateField(auto_now_add=False, null=True, verbose_name="BIRTH")
@@ -60,8 +61,9 @@ class Profile(models.Model):
     github_url = models.CharField(null=True, max_length=100, verbose_name="GITHUB")
 
 class ProjectBoard(models.Model):
+    objects = models.Manager()
     project_title = models.CharField(null=False, default = '', max_length=200, verbose_name="PROJECT TITLE")
     project_des = models.TextField(null=False, default = '', verbose_name="PROJECT DESCRIPTION")
     project_url = models.TextField(null=False, default = '', verbose_name="PROJECT URL")
-    project_img = models.ImageField(upload_to = "myCareerApp/static/img/project", null=False, default = '', verbose_name="PROJECT IMAGE")
+    project_img = models.ImageField(upload_to = "static/img/project", null=False, default = '', verbose_name="PROJECT IMAGE")
     project_id = models.IntegerField(null=True, default = 0, verbose_name="PROJECT ID")
