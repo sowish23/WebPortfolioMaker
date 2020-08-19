@@ -11,9 +11,9 @@
 
 <body>
   {% extends "base.html" %}
-  
   {% block content %}
   <div>
+    {% for profile in profile %}
     <div class="aboutme-box">
       <div class="aboutme-title">
         <p>ABOUT ME</p>
@@ -22,43 +22,45 @@
         <img src="/static/img/profile_img.jpeg" />
       </div>
       <div class="aboutme-intro">
-        " 안녕하세요. 주니어 웹 개발자 정소원 입니다. "
+        " {{profile.intro}} "
       </div>
       <div class="aboutme-profile">
         <div class="profile">
           <label>NAME</label>
-          <span>정소원</span>
+          <span>{{profile.name}}</span>
         </div>
         <div class="profile">
           <label>TEL</label>
-          <span>010-8520-1180</span>
+          <span>{{profile.tel}}</span>
         </div>
         <div class="profile">
           <label>EMAIL</label>
-          <span>soso2266@kookmin.ac.kr</span>
+          <span>{{profile.email}}</span>
         </div>
         <div class="profile">
           <label>BIRTH</label>
-          <span>1999.11.23</span>
+          <span>{{profile.birth}}</span>
         </div>
         <div class="profile">
           <label>TECH</label>
-          <span>FrontEnd - React.js</span>
+          <span>{{profile.tech}}</span>
         </div>
         <div class="profile">
           <label>CAREER</label>
-          <span>Filled Bottle (2019.09 ~)</span>
+          <span>{{profile.career}}</span>
         </div>
         <div class="profile">
           <label>KAKAO ID</label>
-          <span>sowon23</span>
+          <span>{{profile.kakaoId}}</span>
         </div>
         <div class="profile">
           <label>GITHUB</label>
-          <span>https://github.com/sowish23</span>
+          <span>{{profile.github_url}}</span>
         </div>
       </div>
     </div>
+    {% endfor %}
+    {% for projects in projects %}
     <div class="projects-box">
       <div class="projects-box-title">
         <p>PROJECTS</p>
@@ -66,22 +68,23 @@
       <div class="projects-list">
         <div class="project">
           <div class="project-title">
-            WINKPROJECT - 건Dㅏ
+            {{projects.project_title}}
           </div>
           <div class="project-img">
-            <img src="/static/img/project_img.png" />
+            <img src="../{{projects.project_img}}" />
           </div>
           <div class="project-url">
-            <a>https://github.com/sowish23/wink_gunda</a>
+            <a>{{projects.project_url}}</a>
           </div>
           <div class="project-description">
-            윙크 프로젝트로 진행한 식단 관리 웹사이트 <br/>
+            {{projects.project_des}} <br/>
           </div>
         </div>
       </div>
-
     </div>
+    {% endfor %}
   </div>
+
   {% endblock content %}
 </body>
 

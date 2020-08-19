@@ -12,7 +12,10 @@ def signup(request):
     return render(request, 'Signup.html')
 
 def home(request):
-    return render(request, 'Home.html')
+    profile = Profile.objects.all()
+    projects = ProjectBoard.objects.all()
+    context = {'profile' : profile, 'projects': projects}
+    return render(request, 'Home.html', context)
 
 # def edit(request):
 #     return render(request, 'Edit.html')
