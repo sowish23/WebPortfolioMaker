@@ -9,7 +9,6 @@
     <form method="POST" action='' enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <input id='widget.attrs.id'/>
         <button type="submit">EDIT</button>
     </form>
   </div>
