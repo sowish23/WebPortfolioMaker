@@ -60,11 +60,11 @@
       </div>
     </div>
     {% endfor %}
-    {% for projects in projects %}
     <div class="projects-box">
       <div class="projects-box-title">
         <p>PROJECTS</p>
       </div>
+      {% for projects in projects %}
       <div class="projects-list">
         <div class="project">
           <div class="project-title">
@@ -81,8 +81,8 @@
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 
   {% endblock content %}
