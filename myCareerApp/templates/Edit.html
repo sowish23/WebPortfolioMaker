@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div>
-  <div class="aboutme-box">
-    <div class="aboutme-title">
-      <p>ABOUT ME</p>
+  {% if user.is_authenticated %}
+    <div>
+      <div class="aboutme-box">
+        <div class="aboutme-title">
+          <p>ABOUT ME</p>
+        </div>
+        <form method="POST" action='' enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">EDIT</button>
+        </form>
+      </div>
     </div>
-    <form method="POST" action='' enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">EDIT</button>
-    </form>
-  </div>
-</div>
+  {% else %}
+    <div>
+      <div>
+        <div>로그인 후 이용해 주세요. </div>
+        <span><a href="{% url 'login' %}">LOGIN</a></span>
+      </div>
+    </div>
+  {% endif %}
 {% endblock content %}

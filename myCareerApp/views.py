@@ -2,8 +2,8 @@ from django.shortcuts import render ,redirect
 from .models import *
 from .forms import ProfileForm, ProjectForm
 
-def index(request):
-    return render(request, 'index.html')
+# def index(request):
+#     return render(request, 'index.html')
 
 def login(request):
     return render(request, 'Login.html')
