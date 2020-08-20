@@ -14,10 +14,14 @@
       <span>Wish <br /> My Portfolio</span>
     </div>
     <div class="nav-menu">
-      <span onclick="location.href='/home'">ABOUT ME</span>
-      <span onclick="location.href='/home'">PROJECTS</span>
-      <span onclick="location.href='/edit'">EDIT</span>
-      <span onclick="location.href='/create/project'">ADD PROJECTS</span>
+      {% if user.is_authenticated %}
+        <span onclick="location.href='/home'">ABOUT ME</span>
+        <span onclick="location.href='/home'">PROJECTS</span>
+        <span onclick="location.href='/edit'">EDIT</span>
+        <span onclick="location.href='/create/project'">ADD PROJECTS</span>
+        <span style="border: 1px solid lightgrey">{{ user.username }}님 <a style="" href="{% url 'logout' %}">LOGOUT</a></span>
+      {% else %}
+      {% endif %}
     </div>
   </header>
   {% block content %}

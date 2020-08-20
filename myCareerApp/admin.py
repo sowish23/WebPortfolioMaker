@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import ProjectBoard, Profile, User
+from .models import ProjectBoard, Profile
 
 admin.site.register(ProjectBoard)
 admin.site.register(Profile)
-admin.site.register(User)
+# admin.site.register(User)
 
 class UserAdmin(admin.ModelAdmin):
     
