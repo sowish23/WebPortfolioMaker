@@ -1,21 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-<div>
-    <div class="projects-box" id="projects-box">
-    <div class="projects-box-title">
-        <p>PROJECTS</p>
+  {% if user.is_authenticated %}
+    <div>
+        <div class="projects-box" id="projects-box">
+        <div class="projects-box-title">
+            <p>PROJECTS</p>
+        </div>
+        {% comment %} <div class="project">
+            <button onclick="add_div()">ADD PROJECT</button>
+        </div> {% endcomment %}
+        <div class="projects-list" id="projects-list">
+            <form method="POST" action='' enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">EDIT</button>
+            </form>
+        </div>
+        </div>
     </div>
-    {% comment %} <div class="project">
-        <button onclick="add_div()">ADD PROJECT</button>
-    </div> {% endcomment %}
-    <div class="projects-list" id="projects-list">
-        <form method="POST" action='' enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">EDIT</button>
-        </form>
+  {% else %}
+    <div>
+      <div>
+        <div>로그인 후 이용해 주세요. </div>
+        <span><a href="{% url 'login' %}">LOGIN</a></span>
+      </div>
     </div>
-    </div>
-</div>
+  {% endif %}
 <script type="text/javascript" src="/static/js/edit.js"></script> 
 {% endblock content %}

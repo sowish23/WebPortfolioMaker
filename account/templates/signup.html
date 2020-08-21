@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/signup.css">
+  <title>Wish</title>
+</head>
+
+<body>
+  <div class="title">
+    <p>Wish <br /> My Portfolio</p>
+  </div>
+  <div class="signup-box">
+    <div class="signup-title">
+      <p>Sign Up</p>
+    </div>
+    <form method="POST" action= "{% url 'signup' %}">
+      {% csrf_token %}
+      <div class="signup-input">
+        <div class="signup-input-name">
+          <label>ID : </label>
+          <input name="username" type="text" />
+        </div>
+        <div class="signup-input-password">
+          <label>PASSWORD : </label>
+          <input name="password1" type="password" />
+        </div>
+        <div class="signup-input-passwordC">
+          <label>PASSWORD CONFIRM : </label>
+          <input name="password2" type="password" />
+        </div>
+        <div class="signup-btn" onclick="location.href='/'">
+          <input type="submit" value="Sign Up" />
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

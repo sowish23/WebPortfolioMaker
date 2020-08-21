@@ -12,79 +12,87 @@
 <body>
   {% extends "base.html" %}
   {% block content %}
-  <div>
-    {% for profile in profile %}
-    <div class="aboutme-box">
-      <div class="aboutme-title">
-        <p>ABOUT ME</p>
-      </div>
-      <div class="aboutme-img">
-        <img src="/static/img/profile_img.jpeg" />
-      </div>
-      <div class="aboutme-intro">
-        " {{profile.intro}} "
-      </div>
-      <div class="aboutme-profile">
-        <div class="profile">
-          <label>NAME</label>
-          <span>{{profile.name}}</span>
+  {% if user.is_authenticated %}
+    <div>
+      {% for profile in profile %}
+      <div class="aboutme-box">
+        <div class="aboutme-title">
+          <p>ABOUT ME</p>
         </div>
-        <div class="profile">
-          <label>TEL</label>
-          <span>{{profile.tel}}</span>
+        <div class="aboutme-img">
+          <img src="/static/img/profile_img.jpeg" />
         </div>
-        <div class="profile">
-          <label>EMAIL</label>
-          <span>{{profile.email}}</span>
+        <div class="aboutme-intro">
+          " {{profile.intro}} "
         </div>
-        <div class="profile">
-          <label>BIRTH</label>
-          <span>{{profile.birth}}</span>
-        </div>
-        <div class="profile">
-          <label>TECH</label>
-          <span>{{profile.tech}}</span>
-        </div>
-        <div class="profile">
-          <label>CAREER</label>
-          <span>{{profile.career}}</span>
-        </div>
-        <div class="profile">
-          <label>KAKAO ID</label>
-          <span>{{profile.kakaoId}}</span>
-        </div>
-        <div class="profile">
-          <label>GITHUB</label>
-          <span>{{profile.github_url}}</span>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-    <div class="projects-box">
-      <div class="projects-box-title">
-        <p>PROJECTS</p>
-      </div>
-      {% for projects in projects %}
-      <div class="projects-list">
-        <div class="project">
-          <div class="project-title">
-            {{projects.project_title}}
+        <div class="aboutme-profile">
+          <div class="profile">
+            <label>NAME</label>
+            <span>{{profile.name}}</span>
           </div>
-          <div class="project-img">
-            <img src="../{{projects.project_img}}" />
+          <div class="profile">
+            <label>TEL</label>
+            <span>{{profile.tel}}</span>
           </div>
-          <div class="project-url">
-            <a>{{projects.project_url}}</a>
+          <div class="profile">
+            <label>EMAIL</label>
+            <span>{{profile.email}}</span>
           </div>
-          <div class="project-description">
-            {{projects.project_des}} <br/>
+          <div class="profile">
+            <label>BIRTH</label>
+            <span>{{profile.birth}}</span>
+          </div>
+          <div class="profile">
+            <label>TECH</label>
+            <span>{{profile.tech}}</span>
+          </div>
+          <div class="profile">
+            <label>CAREER</label>
+            <span>{{profile.career}}</span>
+          </div>
+          <div class="profile">
+            <label>KAKAO ID</label>
+            <span>{{profile.kakaoId}}</span>
+          </div>
+          <div class="profile">
+            <label>GITHUB</label>
+            <span>{{profile.github_url}}</span>
           </div>
         </div>
       </div>
       {% endfor %}
+      <div class="projects-box">
+        <div class="projects-box-title">
+          <p>PROJECTS</p>
+        </div>
+        {% for projects in projects %}
+        <div class="projects-list">
+          <div class="project">
+            <div class="project-title">
+              {{projects.project_title}}
+            </div>
+            <div class="project-img">
+              <img src="../{{projects.project_img}}" />
+            </div>
+            <div class="project-url">
+              <a>{{projects.project_url}}</a>
+            </div>
+            <div class="project-description">
+              {{projects.project_des}} <br/>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
-  </div>
-
+  {% else %}
+    <div>
+      <div>
+        <div>로그인 후 이용해 주세요. </div>
+        <span><a href="{% url 'login' %}">LOGIN</a></span>
+      </div>
+    </div>
+  {% endif %}
   {% endblock content %}
 </body>
 

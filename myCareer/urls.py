@@ -16,13 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import myCareerApp.views
+import account.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', myCareerApp.views.index, name='index'),
-    path('', myCareerApp.views.login, name='login'),
-    path('signup/', myCareerApp.views.signup, name='signup'),
     path('home/', myCareerApp.views.home, name='home'),
     path('edit/', myCareerApp.views.edit, name='edit'),
     path('create/project/', myCareerApp.views.project, name='project'),
+
+    path('', account.views.index, name='index'),
+    path('login/', account.views.login, name='login'),
+    path('signup/', account.views.signup, name='signup'),
+    path('logout/', account.views.logout, name='logout'),
 ]

@@ -17,19 +17,22 @@
     <div class="login-title">
       <p>Login</p>
     </div>
-    <div class="login-input">
-      <div class="login-input-id">
-        <label>ID : </label>
-        <input />
+    <form method="POST" action= "{% url 'login' %}">
+      {% csrf_token %}
+      <div class="login-input">
+        <div class="login-input-id">
+          <label>ID : </label>
+          <input name="username"/>
+        </div>
+        <div class="login-input-password">
+          <label>PASSWORD : </label>
+          <input name="password"/>
+        </div>
       </div>
-      <div class="login-input-password">
-        <label>PASSWORD : </label>
-        <input />
+      <div class="login-btn">
+        <button onclick="location.href='/home'">Login</button>
       </div>
-    </div>
-    <div class="login-btn">
-      <button onclick="location.href='/home'">Login</button>
-    </div>
+    </form>
     <div class="login-signup" onclick="location.href='/signup'">
       <p>Join Us</p>
     </div>
