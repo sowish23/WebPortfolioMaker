@@ -30,11 +30,8 @@ def login(request):
         return render(request, 'login.html')
 
 def logout(request):
-    if request.method == 'POST':
-        auth.logout(request)
-        return redirect('home')
-
-    return render(request, 'login.html')
+    auth.logout(request)
+    return redirect('home')
 
 def index(request):
     return render(request, 'index.html')
