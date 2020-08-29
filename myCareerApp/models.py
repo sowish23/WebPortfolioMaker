@@ -48,6 +48,7 @@ from django.db import models
 
 class Profile(models.Model):
     objects = models.Manager()
+    # user_id = models.CharField(null=False, max_length=10, verbose_name="USERNAME")
     name = models.CharField(null=False, max_length=10, verbose_name="NAME")
     image = models.ImageField(upload_to = "static/img/profile", null=False, default = '', verbose_name="IMAGE")
     tel = models.CharField(null=False, max_length=12, verbose_name="TEL")
@@ -65,4 +66,4 @@ class ProjectBoard(models.Model):
     project_des = models.TextField(null=False, default = '', verbose_name="PROJECT DESCRIPTION")
     project_url = models.TextField(null=False, default = '', verbose_name="PROJECT URL")
     project_img = models.ImageField(upload_to = "static/img/project", null=False, default = '', verbose_name="PROJECT IMAGE")
-    project_id = models.IntegerField(null=True, default = 0, verbose_name="PROJECT ID")
+    project_id = models.AutoField(db_column='ProjectId', primary_key=True)
