@@ -10,6 +10,7 @@ def signup(request):
         if request.POST['password1'] == request.POST['password2']:
             # User.objects.create(username=request.POST.get('username') ,password=request.POST.get('password1'))
             user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
+            user.save()
             auth.login(request, user)
             return redirect('login')
     return render(request, 'signup.html')
