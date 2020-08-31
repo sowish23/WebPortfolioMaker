@@ -14,53 +14,53 @@
   {% block content %}
   {% if user.is_authenticated %}
     <div>
-      {% for profile in profile %}
+      {% if profile %}
       <div class="aboutme-box">
         <div class="aboutme-title">
           <p>ABOUT ME</p>
         </div>
         <div class="aboutme-img">
-          <img src="../{{profile.image}}" />
+          <img src="../{{user.profile.image}}" />
         </div>
         <div class="aboutme-intro">
-          " {{profile.intro}} "
+          " {{user.profile.intro}} "
         </div>
         <div class="aboutme-profile">
           <div class="profile">
             <label>NAME</label>
-            <span>{{profile.name}}</span>
+            <span>{{user.profile.name}}</span>
           </div>
           <div class="profile">
             <label>TEL</label>
-            <span>{{profile.tel}}</span>
+            <span>{{user.profile.tel}}</span>
           </div>
           <div class="profile">
             <label>EMAIL</label>
-            <span>{{profile.email}}</span>
+            <span>{{user.profile.email}}</span>
           </div>
           <div class="profile">
             <label>BIRTH</label>
-            <span>{{profile.birth}}</span>
+            <span>{{user.profile.birth}}</span>
           </div>
           <div class="profile">
             <label>TECH</label>
-            <span>{{profile.tech}}</span>
+            <span>{{user.profile.tech}}</span>
           </div>
           <div class="profile">
             <label>CAREER</label>
-            <span>{{profile.career}}</span>
+            <span>{{user.profile.career}}</span>
           </div>
           <div class="profile">
             <label>KAKAO ID</label>
-            <span>{{profile.kakaoId}}</span>
+            <span>{{user.profile.kakaoId}}</span>
           </div>
           <div class="profile">
             <label>GITHUB</label>
-            <span>{{profile.github_url}}</span>
+            <span>{{user.profile.github_url}}</span>
           </div>
         </div>
       </div>
-      {% endfor %}
+      {% endif %}
       <div class="projects-box">
         <div class="projects-box-title">
           <p>PROJECTS</p>
