@@ -1,6 +1,8 @@
 # from django.contrib.auth.models import AbstractBaseUser,BaseUserManager,PermissionsMixin
 from django.db import models
-
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # class UserManager(BaseUserManager):    
 #     use_in_migrations = True
@@ -48,7 +50,7 @@ from django.db import models
 
 class Profile(models.Model):
     objects = models.Manager()
-    # user_id = models.CharField(null=False, max_length=10, verbose_name="USERNAME")
+    user_id = models.OneToOneField(User, null=True, on_delete=models.CASCADE, verbose_name="USERID")
     name = models.CharField(null=False, max_length=10, verbose_name="NAME")
     image = models.ImageField(upload_to = "static/img/profile", null=False, default = '', verbose_name="IMAGE")
     tel = models.CharField(null=False, max_length=12, verbose_name="TEL")
@@ -59,6 +61,15 @@ class Profile(models.Model):
     career = models.TextField(null=True, verbose_name="CAREER")
     kakaoId = models.CharField(null=True, max_length=100, verbose_name="KAKAOID")
     github_url = models.CharField(null=True, max_length=100, verbose_name="GITHUB")
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
 
 class ProjectBoard(models.Model):
     objects = models.Manager()
