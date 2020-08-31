@@ -20,15 +20,21 @@ def home(request):
 # def edit(request):
 #     return render(request, 'Edit.html')
 
-def edit(request):
+def edit(request, user_id):
+    profile = Profile.objects.get(user_id = user_id)
     if request.method=='POST':
-        form = ProfileForm(request.POST or None, request.FILES or None)
+        form = ProfileForm(request.POST, instance = profile)
         if form.is_valid():
             form.save()
         return redirect('/home')
     else:
-        form = ProfileForm()
-    return render(request, 'Edit.html', {'form': form})
+        form = ProfileForm(instance=profile)
+        context ={
+            'form' : form,
+            'writing' : True,
+            'now' : 'edit'
+        }
+    return render(request, 'Edit.html', context)
 
 def project(request):
     if request.method=='POST':
