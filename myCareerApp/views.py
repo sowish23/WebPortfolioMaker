@@ -23,7 +23,7 @@ def home(request):
 def edit(request, user_id):
     profile = Profile.objects.get(user_id = user_id)
     if request.method=='POST':
-        form = ProfileForm(request.POST, instance = profile)
+        form = ProfileForm(request.POST, request.FILES, instance = profile)
         if form.is_valid():
             form.save()
         return redirect('/home')
