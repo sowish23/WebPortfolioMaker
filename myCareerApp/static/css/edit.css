@@ -51,6 +51,11 @@ p {
     font-size: 30px;
 }
 
+p a, #image-clear_id {
+    font-size : 18px;
+    width: auto;
+}
+
 label {
     display: inline-block;
     width: 200px;
