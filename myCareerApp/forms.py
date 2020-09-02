@@ -19,3 +19,4 @@ class ProjectForm(ModelForm):
     class Meta:
         model = ProjectBoard
         fields = ['project_title', 'project_url', 'project_des', 'project_img']
+        exclude = ('user_id',)
