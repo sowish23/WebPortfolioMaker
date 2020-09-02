@@ -12,13 +12,12 @@ def signup(request):
     return render(request, 'Signup.html')
 
 def home(request):
-    profile = Profile.objects.all()
-    projects = ProjectBoard.objects.all()
-    context = {'profile' : profile, 'projects': projects}
+    context = {}
+    if request.user.is_authenticated : 
+        profile = Profile.objects.get(user_id=request.user)
+        projects = ProjectBoard.objects.filter(user_id=request.user)
+        context = {'profile' : profile, 'projects': projects}
     return render(request, 'Home.html', context)
-
-# def edit(request):
-#     return render(request, 'Edit.html')
 
 def edit(request, user_id):
     profile = Profile.objects.get(user_id = user_id)
@@ -38,9 +37,10 @@ def edit(request, user_id):
 
 def project(request):
     if request.method=='POST':
-        form = ProjectForm(request.POST or None, request.FILES or None)
+        pb = ProjectBoard(user_id=request.user)
+        form = ProjectForm(request.POST or None, request.FILES or None, instance=pb)
         if form.is_valid():
-            form.save()
+            pb.save()
         return redirect('/home')
     else:
         form = ProjectForm()

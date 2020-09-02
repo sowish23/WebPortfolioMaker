@@ -20,43 +20,43 @@
           <p>ABOUT ME</p>
         </div>
         <div class="aboutme-img">
-          <img src="../{{user.profile.image}}" />
+          <img src="../{{profile.image}}" />
         </div>
         <div class="aboutme-intro">
-          " {{user.profile.intro}} "
+          " {{profile.intro}} "
         </div>
         <div class="aboutme-profile">
           <div class="profile">
             <label>NAME</label>
-            <span>{{user.profile.name}}</span>
+            <span>{{profile.name}}</span>
           </div>
           <div class="profile">
             <label>TEL</label>
-            <span>{{user.profile.tel}}</span>
+            <span>{{profile.tel}}</span>
           </div>
           <div class="profile">
             <label>EMAIL</label>
-            <span>{{user.profile.email}}</span>
+            <span>{{profile.email}}</span>
           </div>
           <div class="profile">
             <label>BIRTH</label>
-            <span>{{user.profile.birth}}</span>
+            <span>{{profile.birth}}</span>
           </div>
           <div class="profile">
             <label>TECH</label>
-            <span>{{user.profile.tech}}</span>
+            <span>{{profile.tech}}</span>
           </div>
           <div class="profile">
             <label>CAREER</label>
-            <span>{{user.profile.career}}</span>
+            <span>{{profile.career}}</span>
           </div>
           <div class="profile">
             <label>KAKAO ID</label>
-            <span>{{user.profile.kakaoId}}</span>
+            <span>{{profile.kakaoId}}</span>
           </div>
           <div class="profile">
             <label>GITHUB</label>
-            <span>{{user.profile.github_url}}</span>
+            <span>{{profile.github_url}}</span>
           </div>
         </div>
       </div>
@@ -65,20 +65,20 @@
         <div class="projects-box-title">
           <p>PROJECTS</p>
         </div>
-        {% for projects in projects %}
+        {% for project in projects %}
         <div class="projects-list">
           <div class="project">
             <div class="project-title">
-              {{projects.project_title}}
+              {{project.project_title}}
             </div>
             <div class="project-img">
-              <img src="../{{projects.project_img}}" />
+              <img src="../{{project.project_img}}" />
             </div>
             <div class="project-url">
-              <a>{{projects.project_url}}</a>
+              <a>{{project.project_url}}</a>
             </div>
             <div class="project-description">
-              {{projects.project_des}} <br/>
+              {{project.project_des}} <br/>
             </div>
           </div>
         </div>
